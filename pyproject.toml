@@ -1,17 +1,26 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentreducer"
-version = "0.1.0"
+dynamic = ["version"]
 description = "A deterministic delta-debugging core for reducing failing inputs"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
+license = "MIT"
+license-files = ["LICENSE"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+dev = ["pytest>=8", "setuptools>=77", "wheel>=0.43", "build>=1", "PyYAML>=6"]
+
+[project.scripts]
+agentreducer = "agentreducer.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "agentreducer._version.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -21,4 +30,5 @@ agentreducer = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra"
+addopts = "-ra -m 'not packaging'"
+markers = ["packaging: required isolated wheel and sdist installation gate"]

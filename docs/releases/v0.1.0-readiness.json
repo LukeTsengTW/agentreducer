@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "state": "V0.1.0_RELEASE_READY",
+  "project_complete": true,
+  "published": false,
+  "supervisor_acceptance": {
+    "basis": "Executor-reported evidence; no independent supervisor inspection of local artifacts."
+  },
+  "gates": [
+    {
+      "id": "offline-tests",
+      "status": "pass",
+      "evidence": [
+        "v0.1.0.md#validation"
+      ],
+      "detail": "Accepted milestone suites: active3.14.5 and portable3.11.9 each1125passed/10knownWindows skips/1packaging deselected. Subsequent observability and release-policy changes passed focused checks. Fresh publication checks and hosted CI are recorded with the GitHub release."
+    },
+    {
+      "id": "python-and-runtime-dependencies",
+      "status": "pass",
+      "detail": "Python>=3.11; active3.14.5/floor3.11.9; runtime dependencies0."
+    },
+    {
+      "id": "isolated-packaging",
+      "status": "pass",
+      "evidence": [
+        "v0.1.0.md#validation"
+      ],
+      "detail": "Required active waiver-documentation gate1passed23.68s: whitelisted wheel+sdist+from-sdist wheel, two fresh venv installs, no-index/no-deps; both wheel MIT/SPDX/license-file bytes verified. Earlier human-license gate1passed24.54s retained. Portable packaging not claimed; a later supervisor state annotation is separately attributed."
+    },
+    {
+      "id": "entrypoints",
+      "status": "pass",
+      "detail": "Active editable and two isolated wheel consoles/python-m; portable module proof only."
+    },
+    {
+      "id": "examples",
+      "status": "pass",
+      "detail": "README9Python blocks/46local checker launches; CLI1block/3launches; independent human/JSON demo."
+    },
+    {
+      "id": "domain-e2e",
+      "status": "pass",
+      "detail": "All three domains, fake agents, M5 witnesses, source/cleanup/projection/count evidence; offline gates used no real model. Separate live gate records three failed native trials."
+    },
+    {
+      "id": "report-contract",
+      "status": "pass",
+      "detail": "Version/schema/exact fractions/qualifications/privacy/unknown counts/rendered identities/coded limitations."
+    },
+    {
+      "id": "atomic-output",
+      "status": "pass",
+      "detail": "NTFS no-clobber/force, race, unsupported-link fail closed, write/flush/fsync/close, primary cancellation and publication retention."
+    },
+    {
+      "id": "baseline-and-git",
+      "status": "pass",
+      "detail": "Accepted pre-publication checkpoint:76frozen files unchanged; historical README preserved; approved pyproject only; original master HEAD021bf1eb13e1ee7ef4bb8f85e4cbe5d2a61fd80f. Publication is identified separately by its exact tag/commit."
+    },
+    {
+      "id": "artifact-privacy",
+      "status": "pass",
+      "detail": "Only owned fake canaries; no real credential discovery/read/bridge. Package whitelist excludes private ledgers/auth/cache."
+    },
+    {
+      "id": "license",
+      "status": "pass",
+      "detail": "Human selected MIT / Luke Tseng; LICENSE copyright2026/current release year; SPDX MIT and explicit license-files. Both wheels/sdist license inclusion/metadata verified in isolated gate."
+    },
+    {
+      "id": "ci-definition",
+      "status": "pass",
+      "detail": "Static test-only Windows/Ubuntu x3.11/3.14 matrix, immutable official refs, contents:read, no persisted credentials."
+    },
+    {
+      "id": "remote-ci",
+      "status": "not-applicable",
+      "detail": "NOT_EXECUTED at this pre-publication snapshot. The test-only workflow runs after the authorized push; consult GitHub Actions and the release for actual results."
+    },
+    {
+      "id": "live",
+      "status": "fail",
+      "reason": "LIVE_VALIDATION_FAILED",
+      "evidence": [
+        "v0.1.0.md#known-live-limitations"
+      ],
+      "detail": "Three human-authorized AMBIENT attempts failed:two gpt-6-luna, then one delegated gpt-6.1-sol diagnostic with a changed pinned native binary. Third task actually started:preflight3/agent1/verifier1; agent exit0/not timed out, verifier exit1/oracleFAIL, fixture unchanged/incorrect, source unchanged/workspace cleaned. Both model and binary changed, so no model-only cause attribution. Authorized3/consumed3; no fourth consent or retry."
+    },
+    {
+      "id": "live-release-requirement",
+      "status": "waived",
+      "reason": "HUMAN_WAIVED_SUCCESSFUL_LIVE_VALIDATION",
+      "scope_version": "0.1.0",
+      "authorized_by": "human",
+      "human_decision": "豁免 v0.1 成功 live 驗證門檻，將三次失敗列為已知限制",
+      "evidence": [
+        "v0.1.0.md#known-live-limitations"
+      ],
+      "detail": "Only successful live validation as a v0.1.0 release-readiness prerequisite is waived. Actual live status remains fail and all three failures remain known limitations. No future-version waiver, further model task, publication or deployment authority is implied. Supervisor accepted release readiness and agreed development/readiness scope completion under this waiver."
+    },
+    {
+      "id": "live-observability",
+      "status": "pass",
+      "detail": "Accepted operator smoke exposes17 finite scalar fields; no raw outputs/environment/credentials/paths/exceptions, backend requests always null.11RED then11GREEN,156targeted passes on each runtime including145M4 cases. Third private driver adds passive successful-process-start counts, verified by one isolated Python-only probe, without changing operator/source/tests."
+    },
+    {
+      "id": "backend-call-bound",
+      "status": "not-applicable",
+      "reason": "HUMAN_ACCEPTED_UNKNOWN_BACKEND_REQUEST_COUNT",
+      "detail": "Human accepted unknown backend request count and delegated one new different-model diagnostic under the retained contract. All three trials leave backend_model_requests null; no backend cap or count is proved."
+    },
+    {
+      "id": "publication",
+      "status": "authorized",
+      "detail": "Human directly requested publication to the existing GitHub repository. This file is a pre-publication readiness snapshot; the tag and GitHub Release provide publication state. PyPI, deployment, new model trials and credential setup are outside this authorization.",
+      "reason": "HUMAN_AUTHORIZED_GITHUB_PUBLICATION",
+      "authorized_by": "human",
+      "scope_version": "0.1.0",
+      "target": "github",
+      "repository": "LukeTsengTW/agentreducer"
+    },
+    {
+      "id": "whole-change-review",
+      "status": "pass",
+      "detail": "Exactly one fresh whole-change review of58 pre-fix files; Critical0/Important3/Minor1; native help-consent regrade to Important, all four reproduced and fixed once. Seven declined items explicitly ruled; no second review or deferred Minor."
+    },
+    {
+      "id": "post-review-validation",
+      "status": "pass",
+      "detail": "Offline milestone final1125/10both and packaging/examples passed. Human license update6targeted passesboth/licensed packaging1pass; narrow operator observability156targeted passesboth. Human v0.1 waiver:missing-gate RED1, then release/entrypoint6passed on3.14.5(7.56s) and3.11.9(2.22s), active packaging1passed23.68s. Accepted production/verifier semantics unchanged; no independent re-review, fresh full-suite or portable packaging claim."
+    },
+    {
+      "id": "final-attribution",
+      "status": "pass",
+      "detail": "Accepted engineering artifact checkpoints are retained locally. Publication contains only the approved source/tests/public docs/config/license, excluding private supervision records. The GitHub release identifies the exact tag/commit and distribution SHA-256 values."
+    }
+  ],
+  "record_scope": "pre-publication-readiness",
+  "recorded_at_utc": "2026-10-10 06:32:39 UTC",
+  "publication_url": "https://github.com/LukeTsengTW/agentreducer/releases/tag/v0.1.0"
+}

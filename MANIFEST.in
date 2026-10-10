@@ -1,0 +1,9 @@
+include README.md CHANGELOG.md LICENSE pyproject.toml MANIFEST.in
+recursive-include src/agentreducer *.py py.typed
+include docs/CLI.md docs/REPORTS.md docs/SECURITY.md docs/releases/v0.1.0.md
+recursive-include examples/minimal_failure *.py *.md
+prune tests
+prune docs/superpowers
+prune .git
+prune .venv
+global-exclude __pycache__ *.py[cod] .env .env.*

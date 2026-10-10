@@ -2,13 +2,13 @@
 
 from collections.abc import Sequence
 
+from .._counting import CountingOracle
 from ..models import OracleResult
 from ..reducers import ddmin
 from .models import (
     PromptBlock,
     PromptCandidate,
     PromptReductionResult,
-    PromptSplitMode,
 )
 from .oracle import PromptEvaluator
 
@@ -25,24 +25,13 @@ class PromptReducer:
         no extra oracle calls are made to calculate statistics. Errors propagate
         without returning a partial result.
         """
-        block_oracle = _CountingBlockOracle(oracle, candidate.mode)
+        def evaluate(blocks: Sequence[PromptBlock]) -> OracleResult:
+            return oracle.evaluate(PromptCandidate(tuple(blocks), candidate.mode))
+
+        block_oracle = CountingOracle(evaluate)
         blocks = ddmin(candidate.blocks, block_oracle)
         return PromptReductionResult(
             original=candidate,
             reduced=PromptCandidate(tuple(blocks), candidate.mode),
             evaluations=block_oracle.evaluations,
         )
-
-
-class _CountingBlockOracle:
-    """Adapt M0's sequence oracle contract to structured prompts for one run."""
-
-    def __init__(self, oracle: PromptEvaluator, mode: PromptSplitMode) -> None:
-        self.oracle = oracle
-        self.mode = mode
-        self.evaluations = 0
-
-    def evaluate(self, candidate: Sequence[PromptBlock]) -> OracleResult:
-        prompt = PromptCandidate(tuple(candidate), self.mode)
-        self.evaluations += 1
-        return self.oracle.evaluate(prompt)
